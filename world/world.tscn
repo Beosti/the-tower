@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://6q1p4c4jqsp0"]
+
+[ext_resource type="PackedScene" uid="uid://bemwka6045svy" path="res://world/tilemap/tile_map.tscn" id="1_hs5o7"]
+[ext_resource type="PackedScene" uid="uid://dsvi2b5plhtip" path="res://entities/player/PlayerEntity.tscn" id="3_33nym"]
+[ext_resource type="PackedScene" uid="uid://c8y5b2hx5qbkh" path="res://entities/oldman/OldManEntity.tscn" id="3_fguvw"]
+[ext_resource type="PackedScene" uid="uid://bp5ry418u8q23" path="res://entities/slime/slime_entity.tscn" id="4_bp7su"]
+
+[node name="World" type="Node"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_hs5o7")]
+
+[node name="Player" parent="." instance=ExtResource("3_33nym")]
+position = Vector2(499, 424)
+
+[node name="OldManEntity" parent="." instance=ExtResource("3_fguvw")]
+position = Vector2(593, 384)
+
+[node name="SlimeEntity" parent="." instance=ExtResource("4_bp7su")]
+position = Vector2(440, 331)

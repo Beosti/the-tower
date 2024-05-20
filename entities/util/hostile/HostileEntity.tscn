@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpsrk4iguguxe"]
+
+[ext_resource type="PackedScene" uid="uid://cxbfo7k77kq1m" path="res://entities/util/entity/Entity.tscn" id="1_1f6l4"]
+[ext_resource type="Script" path="res://entities/slime/SlimeEntity.gd" id="2_f57g6"]
+
+[node name="HostileEntity" instance=ExtResource("1_1f6l4")]
+script = ExtResource("2_f57g6")

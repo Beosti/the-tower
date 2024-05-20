@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxbfo7k77kq1m"]
+
+[ext_resource type="Script" path="res://entities/util/entity/Entity.gd" id="1_wko7j"]
+[ext_resource type="Texture2D" uid="uid://4j4ah1dykqn3" path="res://icon.svg" id="2_sq2uj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6aqb"]
+size = Vector2(10.5916, 9.40591)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l73ot"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_io25o"]
+radius = 51.0098
+
+[node name="Entity" type="CharacterBody2D"]
+input_pickable = true
+script = ExtResource("1_wko7j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.25, -1.19209e-07)
+scale = Vector2(1.36901, 1.48843)
+shape = SubResource("RectangleShape2D_c6aqb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -5.96046e-08)
+scale = Vector2(0.117188, 0.109375)
+texture = ExtResource("2_sq2uj")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="TalkingRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TalkingRange"]
+shape = SubResource("CircleShape2D_l73ot")
+
+[node name="AttackRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+shape = SubResource("CircleShape2D_io25o")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

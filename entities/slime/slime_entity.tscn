@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp5ry418u8q23"]
+
+[ext_resource type="PackedScene" uid="uid://bpsrk4iguguxe" path="res://entities/util/hostile/HostileEntity.tscn" id="1_t3v4w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l73ot"]
+radius = 20.0
+
+[node name="SlimeEntity" instance=ExtResource("1_t3v4w")]
+
+[node name="Area2D" type="Area2D" parent="." index="3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_l73ot")

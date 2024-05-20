@@ -1,0 +1,22 @@
+~ start
+
+if global.given_slimes_item == false
+	Slime: [[Hi|Hello|Howdy]]... how may I help?
+	- Who are you?
+		Slime: I'm just... jello, nothing more
+		Slime: Jello that can speak lol
+		
+	- I think I have something for you.
+		Slime: Oh.. really?
+		- yes, found something with your name on it
+			if global.found_slimes_item == true
+				Slime: Ahh, a chest I mist have dropped it. Thank you so much!
+				set global.given_slimes_item == true
+		- no, I lied => END
+	- goodbye. => END
+else
+	Slime: [[Hi|Hello|Howdy]], thank you so much for finding my chest!
+	Slime: I don't know what I would have done without you.
+	Slime: I am working on a massive suprise for you!
+	=> END
+=> END

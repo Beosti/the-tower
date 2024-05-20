@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsvi2b5plhtip"]
+
+[ext_resource type="PackedScene" uid="uid://cxbfo7k77kq1m" path="res://entities/util/entity/Entity.tscn" id="1_ua2ng"]
+[ext_resource type="Script" path="res://entities/player/PlayerEntity.gd" id="2_c04ld"]
+
+[node name="PlayerEntity" instance=ExtResource("1_ua2ng")]
+script = ExtResource("2_c04ld")
+attack_speed = 3.0
+
+[node name="Timer" parent="." index="2"]
+process_callback = 0
+
+[node name="Camera2D" type="Camera2D" parent="." index="4"]
+zoom = Vector2(2.5, 2.5)
+
+[connection signal="body_entered" from="TalkingRange" to="." method="body_entered_talking_range"]
+[connection signal="body_exited" from="TalkingRange" to="." method="body_exited_talking_range"]
+[connection signal="body_entered" from="AttackRange" to="." method="body_entered_attack_range"]
+[connection signal="body_exited" from="AttackRange" to="." method="body_exited_attack_range"]
